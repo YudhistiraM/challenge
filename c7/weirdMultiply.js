@@ -1,6 +1,6 @@
 function weirdMultiply(sentence){
-  let hasil = 1;
-  let strAngka = sentence.toString();
+  let hasil = 1,
+  strAngka = sentence.toString();
 
   if (strAngka.length == 1) {
     hasil = parseInt(strAngka);

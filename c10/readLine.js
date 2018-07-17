@@ -45,7 +45,10 @@ function readLine(){
   rl.on('line', (input) => {
     console.log("Hasil konversi:" +sentencesManipulation(input));
     rl.prompt();
-  });
+  }).on('close', () => {
+  console.log('Good Bye!');
+  process.exit(0);
+});
 }
 
 readLine()
