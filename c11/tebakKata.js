@@ -12,21 +12,21 @@ function tebakKata(){
     prompt:'Tebakan : '
   });
   console.log("Selamat datang di permainan Tebak Kata, silahkan isi dengan jawban yang benar ya!");
-  console.log("pertanyaan: " +dataFinish[i].definition);
+  console.log("\npertanyaan: " +dataFinish[i].definition);
   rl.prompt();
   rl.on('line', (input) => {
     if (dataFinish[i].term == (input)) {
-      console.log("Anda benar!");
+      console.log("Selamat Anda Benar!");
       i++;
       if (i < dataFinish.length) {
-        console.log("pertanyaan: " +dataFinish[i].definition);
+        console.log("\npertanyaan: " +dataFinish[i].definition);
         rl.prompt();
       }else {
-        console.log("Hore Anda Menang");
+        console.log("\nHore Anda Menang!\n");
         rl.close();
       }
     } else {
-      console.log("wkwkwkwk,Anda Kurang Beruntung!");
+      console.log("wkwkwkwk,Anda Kurang Beruntung!\n");
       rl.prompt();
     }
   }).on('close', () => {
