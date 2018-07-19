@@ -23,6 +23,7 @@ function tebakKata(){
         rl.prompt();
       }else {
         console.log("Hore Anda Menang");
+        rl.close();
       }
     } else {
       console.log("wkwkwkwk,Anda Kurang Beruntung!");

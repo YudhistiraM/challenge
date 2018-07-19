@@ -47,7 +47,7 @@ function readLine(){
     rl.prompt();
   }).on('close', () => {
   console.log('Good Bye!');
-  process.exit(0);
+  process.exit();
 });
 }
 
