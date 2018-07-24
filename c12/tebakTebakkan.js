@@ -27,7 +27,7 @@ function tebakTebakkan(){
         i++;
         console.log("\npertanyaan: " +dataFinish[i].definition);
       }else{
-        if (dataFinish[i].term == input.trim()) {
+        if (input.trim().toLowerCase() == dataFinish[i].term ) {
           console.log("\nAnda Beruntung!");
           i++;
           if (i < dataFinish.length) {
