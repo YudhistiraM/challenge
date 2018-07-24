@@ -1,4 +1,4 @@
-function stringmanipulation (word) {
+function stringmanipulation(word){
 var str1 = "";
 var str2 = "";
 var str3 = "";
@@ -18,7 +18,7 @@ return word;
   str2 = word.slice(1);
   str3 = 'nyo';
   return str2 + str1 + str3;
-}
+  }
 }
 
 console.log(stringmanipulation('ayam'));

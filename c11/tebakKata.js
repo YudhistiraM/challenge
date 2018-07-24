@@ -9,7 +9,7 @@ function tebakKata(){
   let rl = readline.createInterface({
     input: process.stdin,
     output: process.stdout,
-    prompt:'Tebakan : '
+    prompt:'Tebakan : ',
   });
   console.log("Selamat datang di permainan Tebak Kata, silahkan isi dengan jawban yang benar ya!");
   console.log("\npertanyaan: " +dataFinish[i].definition);
