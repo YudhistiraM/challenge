@@ -1,0 +1,22 @@
+[
+   {
+      "task": "pergi ke pasar",
+      "complete": true
+   },
+   {
+      "task": "Belajar di rubicamp - sesi 1",
+      "complete": true
+   },
+   {
+      "task": "shalat dzuhur berjamaah",
+      "complete": true
+   },
+   {
+      "task": "makan siang",
+      "complete": false
+   },
+   {
+      "task": "Belajar di rubicamp - sesi 2",
+      "complete": false
+   }
+]
