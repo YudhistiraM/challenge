@@ -11,6 +11,7 @@ function save(agenda){
 }
 
 let agenda = [];
+let fill =param[2].slice(7);
 
 switch (param[2]) {
   case 'list':
@@ -24,10 +25,20 @@ switch (param[2]) {
   }
   break;
 
+  case 'task':
+  let ask = param.slice(3);
+  agenda = read();
+  if(ask >= 0){
+    console.log(`${ask}. ${agenda[ask-1].complete ? '[x]' : '[ ]'} ${agenda[ask-1].task}.`);
+  } else {
+    console.log('-- data kosong --');
+  }
+  break;
+
   case 'add':
   let content = param.slice(3).join(' ');
   agenda = read();
-  agenda.push({task: content, complete: false});
+  agenda.push({task: content, complete: false, tags:[]});
   save(agenda);
   console.log(`'${content}' telah ditambahkan.`);
   break;
@@ -79,6 +90,7 @@ switch (param[2]) {
     console.log("Masukkan data pengurutan tampilan 'asc atau desc'");
   }
   break;
+
   case 'list:completed':
   let done = param.slice(3);
   agenda = read();
@@ -98,15 +110,28 @@ switch (param[2]) {
     console.log("Masukkan data pengurutan tampilan 'asc atau desc'");
   }
   break;
+
   case 'tag':
   let tag = param.slice(3,4);
   let tagName = param.slice(4).join(',');
-  let tagElemen =[];
   agenda = read();
-  //agenda.push({task:content, complete: false, tagName:tagElemen[]})
+  agenda[tag-1]["tags"].push(tagName);
   save(agenda);
-  console.log(`'${tagName}' telah ditambahkan ke daftar.`);
+  console.log(`${tagName} telah ditambahkan ke daftar '${agenda[tag-1].task}'.`);
   break;
+
+  case `filter:${fill}`:
+  // console.log(fill);
+  agenda = read();
+  //console.log(agenda);
+  for(let i = 0; i < agenda.length; i++){
+    if(agenda[i].tags.includes(fill) == true){
+      console.log(`${i + 1}. ${agenda[i].complete ? '[x]' : '[ ]'} ${agenda[i].task}.`);
+      }
+    }
+
+  break;
+
   default:
   console.log(">>>  JS TODO  <<<");
   console.log("$ node todo.js <command>");

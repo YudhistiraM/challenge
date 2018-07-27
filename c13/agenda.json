@@ -1,22 +1,27 @@
 [
    {
-      "task": "pergi ke pasar",
-      "complete": true
+      "task": "Makan siang",
+      "complete": false,
+      "tags": [
+         "makan"
+      ]
    },
    {
-      "task": "Belajar di rubicamp - sesi 1",
-      "complete": true
+      "task": "Belajar Coding",
+      "complete": false,
+      "tags": []
    },
    {
-      "task": "shalat dzuhur berjamaah",
-      "complete": true
+      "task": "Ashar Berjamaah",
+      "complete": false,
+      "tags": [
+         "makan",
+         "masjid"
+      ]
    },
    {
-      "task": "makan siang",
-      "complete": false
-   },
-   {
-      "task": "Belajar di rubicamp - sesi 2",
-      "complete": false
+      "task": "Telepon Rumah",
+      "complete": false,
+      "tags": []
    }
 ]
