@@ -1,0 +1,44 @@
+//Create Database SQLLITE 3 :
+
+University.db
+
+//Create Table Database
+
+//Create Table Mahasiswa :
+
+CREATE TABLE Mahasiswa (Nim INT Not Null PRIMARY KEY,Nama_Mhs char(25),Alamat_Mhs Varchar(30));
+
+//Create table Jurusan :
+CREATE TABLE Jurusan (Id_Jurusan INT Not Null PRIMARY KEY,Nama_Jur char(20));
+
+//Create Tble Dosen :
+
+CREATE TABLE Dosen (NIP INT Not Null PRIMARY KEY,Nama_Dosen char(20));
+
+//Create Table Mata_Kuliah:
+
+CREATE TABLE Mata_Kuliah(Id_MataKuliah Varchar(15) Not Null PRIMARY KEY,Nama_MataKuliah Varchar(20));
+
+
+// INSERT DATABASE
+
+INSERT INTO Mahasiswa (Nim,Nama_Mhs,Alamat_Mhs) VALUES ( 2001, 'Anita','Jalan Barokah I');
+
+INSERT INTO Jurusan (Id_Jurusan,Nama_Jur) VALUES ( 01, 'Sistem Informasi');
+
+INSERT INTO Dosen (NIP,Nama_Dosen) VALUES ( 0101, 'Zulfiandri');
+
+INSERT INTO Mata_Kuliah (Id_MataKuliah,Nama_MataKuliah) VALUES ( 01, 'Aljabar');
+
+
+//Menampilkan Data Database
+
+//Data Mahasiswa :
+
+select * from Mahasiswa;
+
+select * from Jurusan;
+
+select * from Dosen;
+
+select * from Mata_Kuliah;
