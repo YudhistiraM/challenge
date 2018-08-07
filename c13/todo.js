@@ -121,14 +121,14 @@ switch (param[2]) {
   break;
 
   case `filter:${fill}`:
-  // console.log(fill);
+  //console.log(fill);
   agenda = read();
   //console.log(agenda);
   for(let i = 0; i < agenda.length; i++){
     if(agenda[i].tags.includes(fill) == true){
       console.log(`${i + 1}. ${agenda[i].complete ? '[x]' : '[ ]'} ${agenda[i].task}.`);
-      }
     }
+  }
 
   break;
 

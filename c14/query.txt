@@ -32,7 +32,8 @@ INSERT INTO Mata_Kuliah (Id_MataKuliah,Nama_MataKuliah) VALUES ( 01, 'Aljabar');
 
 
 //Menampilkan Data Database
-
+.header on
+.mode column
 //Data Mahasiswa :
 
 select * from Mahasiswa;

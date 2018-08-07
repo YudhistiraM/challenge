@@ -102,24 +102,31 @@ class CarFactory {
       for (let j = 0; j < this.allcars[i].length; j++) {
         console.log(`${this.allcars[i][j].length} Unit : ${this.allcars[i][j][0].type}`);
         console.log("===== DETAIL SPECIFICATION =====");
-        console.log("Door       :"+this.allcars[i][j][0].door);
-        console.log("Seat       :"+this.allcars[i][j][0].seat);
-        console.log("Year       :"+this.allcars[i][j][0].year);
-        console.log("Warranty   :"+this.allcars[i][j][0].warranty +" Tahun");
-        console.log("Color      :"+this.allcars[i][j][0].color);
-        console.log("Fuel       :"+this.allcars[i][j][0].fuel);
-        console.log("Meachine   :"+this.allcars[i][j][0].meachine);
-        console.log("Brand tyre :"+this.allcars[i][j][0].Brandtyre.Tyre);
-        this.WarrantyCalculation(Year,i,j);
-        console.log();
+        console.log("Door       :"+ this.allcars[i][j][0].door);
+        console.log("Seat       :"+ this.allcars[i][j][0].seat);
+        console.log("Year       :"+ this.allcars[i][j][0].year);
+        console.log("Warranty   :"+ this.allcars[i][j][0].warranty +" Tahun");
+        console.log("Color      :"+ this.allcars[i][j][0].color);
+        console.log("Fuel       :"+ this.allcars[i][j][0].fuel);
+        console.log("Meachine   :"+ this.allcars[i][j][0].meachine);
+        console.log("Brand tyre :"+ this.allcars[i][j][0].Brandtyre.Tyre);
+        //this.WarrantyCalculation(2021);
+      console.log();
       }
       console.log("________________________________________");
     }
   }
 
-  WarrantyCalculation(Year,i,j){
-    let warrantycal = Year - this.allcars[i][j][0].year;
-    this.allcars[i][j][0].warranty > warrantycal ? console.log("Warranty : Expired") : console.log("Warranty : Actived");
+  WarrantyCalculation(Year){
+    for (let i = 0; i < this.allcars.length; i++) {
+      for (let j = 0; j < this.allcars[i].length; j++) {
+        let warrantycal = Year - this.allcars[i][j][0].year;
+        console.log();
+        console.log(`Hasil PRODUKSI Pada Bulan ${this.allcars[i]["Month"]} Yaitu :`);
+        console.log(`${this.allcars[i][j].length} Unit : ${this.allcars[i][j][0].type}`);
+        this.allcars[i][j][0].warranty > warrantycal ? console.log("Warranty : Expired") : console.log("Warranty : Actived");
+      }
+    }
   }
 
 
@@ -127,6 +134,7 @@ class CarFactory {
 
 let car = new CarFactory();
 car.production("Januari");
-car.production("Februari");
-car.production("Maret");
-car.showProduction(2021);
+//car.production("Februari");
+//car.production("Maret");
+car.showProduction();
+car.WarrantyCalculation(2021);
