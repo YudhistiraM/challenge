@@ -7,7 +7,7 @@ export default class Example {
 
   //Menampilkan Nilai x
   result(){
-    console.log(this.x);
+    console.log(Math.round(this.x));
     return this;
   }
   // Method Tambah Nilai Ke x
