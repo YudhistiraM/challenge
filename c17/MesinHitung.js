@@ -46,10 +46,4 @@ export default class Example {
     return this;
   }
 
-  //Method Menghasilkan nilai kuadrat dari x
-  Kuadrat(){
-    this.x = Math.pow(this.x, 2);
-    return this;
-  }
-
 }
