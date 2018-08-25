@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <title>Add Data</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+</head>
+<body>
+  <div class="container">
+    <div class="panel panel-primary">
+      <div class="panel-heading">Add Data</div>
+      <div class="panel-body">
+        <form class="form-horizontal" action="" method="post">
+
+          <div class="form-group">
+            <label for="string" class="col-sm-2 control-label">String</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" id="string" name="string" placeholder="String">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="integer" class="col-sm-2 control-label">Integer</label>
+            <div class="col-sm-10">
+              <input type="number" class="form-control" id="integer" name="integer" placeholder="integer">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="float" class="col-sm-2 control-label">Float</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" id="float" name="float" placeholder="Float">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="date" class="col-sm-2 control-label">Date</label>
+            <div class="col-sm-10">
+              <input type="date" class="form-control" id="date" name="date" placeholder="end date">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="boolean" class="col-sm-2 control-label">Boolean</label>
+            <div class="col-sm-10">
+              <select class="form-control" name="boolean">
+                <option>Choose the boolean...</option>
+                <option>True</option>
+                <option>False</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+              <button type="submit" class="btn btn-success">Simpan</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
