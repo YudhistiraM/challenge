@@ -48,7 +48,8 @@ router.get('/edit/:id', function(req, res, next) {
   let id = req.params.id;
   let item = data.filter(x=>x.id == id);
   //console.log(data);
-  res.render('edit', {data: item});
+  res.render('edit', {item: item});
+
 });
 
 router.post('/edit/:id', function(req, res, next) {
@@ -68,7 +69,7 @@ router.post('/edit/:id', function(req, res, next) {
     }
     // console.log(data);
     return x;
-    })
+  })
   //data.push({id: Date.now(), string: string, integer: integer, float: float, date: date, boolean: boolean});
   res.redirect('/');
 });

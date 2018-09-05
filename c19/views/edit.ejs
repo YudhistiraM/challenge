@@ -16,7 +16,7 @@
             <div class="form-group">
               <label for="string" class="col-sm-2 control-label">ID</label>
               <div class="col-sm-10">
-                <input value="<%= data[0].id %>" type="text" class="form-control" id="string" name="string" placeholder="ID">
+                <input value="<%= item[0].id %>" type="text" class="form-control" id="string" name="string" placeholder="ID">
               </div>
             </div>
           </fieldset>
@@ -24,28 +24,28 @@
           <div class="form-group">
             <label for="string" class="col-sm-2 control-label">String</label>
             <div class="col-sm-10">
-              <input value="<%= data[0].string%>" type="text" class="form-control" id="string" name="string" placeholder="String">
+              <input value="<%= item[0].string%>" type="text" class="form-control" id="string" name="string" placeholder="String">
             </div>
           </div>
 
           <div class="form-group">
             <label for="integer" class="col-sm-2 control-label">Integer</label>
             <div class="col-sm-10">
-              <input value="<%= data[0].integer %>" type="number" class="form-control" id="integer" name="integer" placeholder="Integer">
+              <input value="<%= item[0].integer %>" type="number" class="form-control" id="integer" name="integer" placeholder="Integer">
             </div>
           </div>
 
           <div class="form-group">
             <label for="float" class="col-sm-2 control-label">Float</label>
             <div class="col-sm-10">
-              <input value="<%= data[0].float%>" type="text" class="form-control" id="float" name="float" placeholder="Float">
+              <input value="<%= item[0].float%>" type="text" class="form-control" id="float" name="float" placeholder="Float">
             </div>
           </div>
 
           <div class="form-group">
             <label for="date" class="col-sm-2 control-label">Date</label>
             <div class="col-sm-10">
-              <input value="<%= data[0].date %>" type="date" class="form-control" id="date" name="date">
+              <input value="<%= item[0].date %>" type="date" class="form-control" id="date" name="date">
             </div>
           </div>
 
@@ -54,8 +54,8 @@
             <div class="col-sm-10">
               <select class="form-control" name="boolean">
                 <option></option>
-                <option <%= data[0].boolean ? "selected" : "" %> >True</option>
-                <option <%= !data[0].boolean ? "selected" : "" %> >False</option>
+                <option <%= item[0].boolean ? "selected" : "" %> >True</option>
+                <option <%= !item[0].boolean ? "selected" : "" %> >False</option>
               </select>
             </div>
           </div>
