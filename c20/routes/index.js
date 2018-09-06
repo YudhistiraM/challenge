@@ -46,6 +46,7 @@ router.get('/', function(req, res, next) {
   }
 
   db.all(sql, (err, data) => {
+
     let total = data[0].total;
     let pages = Math.ceil(total / limit);
     sql = `SELECT Bread_id, string, integer, float, date, boolean FROM detailBread`;
