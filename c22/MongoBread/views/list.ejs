@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>JSON Bread</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel='stylesheet' href='/stylesheets/style.css' />
+  <!-- <style>
+  .padd {
+  padding-top: 50px;
+  padding-right: 30px;
+  padding-bottom: 50px;
+  padding-left: 80px;
+}
+</style> -->
+</head>
+<body>
+  <div class="container">
+    <div class="panel panel-primary">
+      <div class="panel-heading"><h1>BREAD (Browse, Read, Edit, Add, Delete)</h1></div>
+      <div class="panel-body">
+        <h3>Filter</h3>
+        <form action="" method="get">
+          <input type="hidden" name="page" value="1">
+          <table style="width:100%">
+            <tr>
+              <td>
+                <div class="checkbox">
+                  <label>
+                    <input type="checkbox" id="blankCheckbox" name="cid" value="true"<%= query.cid ? ' checked' : '' %>> ID
+                  </label>
+                </div>
+              </td>
+              <td>
+                <div class="form-group">
+                  <input type="text" class="form-control" id="exampleInputEmail1" name="Bread_id" placeholder="ID" value="<%= query.Bread_id %>">
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <div class="checkbox">
+                  <label>
+                    <input type="checkbox" id="blankCheckbox" name="cstring" value="true" <%= query.cstring ? ' checked' : '' %>> String
+                  </label>
+                </div>
+              </td>
+              <td>
+                <div class="form-group">
+                  <input type="text" class="form-control" id="exampleInputEmail1" name="string" placeholder="String" value="<%= query.string%>">
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <div class="checkbox">
+                  <label>
+                    <input type="checkbox" id="blankCheckbox" name="cinteger" value="true" <%= query.cinteger ? ' checked' : '' %>> Integer
+                  </label>
+                </div>
+              </td>
+              <td>
+                <div class="form-group">
+                  <input type="text" class="form-control" id="exampleInputEmail1" name="integer" placeholder="integer" value="<%= query.integer%>">
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <div class="checkbox">
+                  <label>
+                    <input type="checkbox" id="blankCheckbox" name="cfloat" value="true" <%= query.cfloat ? ' checked' : '' %>> Float
+                  </label>
+                </div>
+              </td>
+              <td>
+                <div class="form-group">
+                  <input type="text" class="form-control" id="exampleInputEmail1" name="float" placeholder="Float" value="<%= query.float%>">
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <div class="checkbox">
+                  <label>
+                    <input type="checkbox" id="blankCheckbox" name="cdate" value="true" <%= query.cdate ? ' checked' : '' %>> Date
+                  </label>
+                </div>
+              </td>
+              <td>
+                <div class="row">
+                  <div class="col-md-3">
+                    <div class="form-group">
+                      <input type="date" class="form-control" id="exampleInputEmail1" name="sdate" value="<%= query.sdate%>">
+                    </div>
+                  </div>
+                </div>
+
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <!-- <div class="checkbox">
+                <label>
+                <input type="checkbox" id="blankCheckbox" value="option1" aria-label="..."> Float
+              </label>
+            </div> -->
+          </td>
+          <td>
+            <p><b> to </b></p>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <!-- <div class="checkbox">
+            <label>
+            <input type="checkbox" id="blankCheckbox" value="option1" aria-label="..."> Float
+          </label>
+        </div> -->
+      </td>
+      <td>
+        <div class="row">
+          <div class="col-md-3">
+            <div class="form-group">
+              <input type="date" class="form-control" id="exampleInputEmail1" name="edate" value="<%= query.edate%>">
+            </div>
+          </div>
+        </div>
+
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <div class="checkbox">
+          <label>
+            <input type="checkbox" id="blankCheckbox" name="cboolean" value="true" <%= query.cdate ? ' checked' : '' %>> Boolean
+          </label>
+        </div>
+      </td>
+      <td>
+        <select class="form-control" name="boolean" value="<%= query.boolean%>">
+          <option>Chosee the boolean...</option>
+          <option>True</option>
+          <option>False</option>
+        </select>
+      </td>
+    </tr>
+  </table>
+  <br />
+  <button type="submit" class="btn btn-primary">Search</button>
+  <a href="/" class="btn btn-warning">reset</a>
+</form>
+<br />
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <td><b>ID</b></td>
+      <td><b>String</b></td>
+      <td><b>Integer</b></td>
+      <td><b>Float</b></td>
+      <td><b>Date</b></td>
+      <td><b>Boolean</b></td>
+      <td><b>Actions</b></td>
+    </tr>
+  </thead>
+  <tbody>
+    <% for(let i = 0; i < rows.length; i++){ %>
+      <tr>
+        <td><%= rows[i]._id %></td>
+        <td><%= rows[i].stringdata %></td>
+        <td><%= rows[i].integerdata %></td>
+        <td><%= rows[i].floatdata %></td>
+        <td><%= moment(rows[i].datedata).format("DD MMMM YYYY") %></td>
+        <td><%= rows[i].booleandata %></td>
+        <td>
+          <a href="edit/<%= rows[i]._id %>" class="btn btn-success">edit</a>
+          <a href="delete/<%= rows[i]._id %>" class="btn btn-danger">delete</a>
+        </td>
+      </tr>
+      <% } %>
+    </tbody>
+  </table>
+  <nav aria-label="Page navigation">
+    <ul class="pagination">
+      <li><a href="<%= pagination.url.replace(`page=${pagination.currentPage}`, `page=${parseInt(pagination.currentPage)-1}`) %>">Previous</a></li>
+      <% for(let i = 1; i <= pagination.pages; i++){ %>
+      <li class="<%= i == pagination.currentPage ? 'active' : ''; %>"><a href="<%= pagination.url.replace(`page=${pagination.currentPage}`, `page=${i}`) %>"><%= i %></a></li>
+      <% } %>
+      <li><a href="<%= pagination.url.replace(`page=${pagination.currentPage}`, `page=${parseInt(pagination.currentPage)+1}`) %>">Next</a></li>
+    </ul>
+  </nav>
+  <br />
+  <a href="add" class="btn btn-primary">Tambah</a>
+</div>
+</div>
+</div>
+</body>
+</html>

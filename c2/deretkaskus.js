@@ -32,4 +32,4 @@ function kaskus(n){
   return result;
 }
 
-console.log(kaskus(10));
+console.log(kaskus(3));
