@@ -10,13 +10,14 @@ module.exports = function(data){
     let currentPage = req.query.page || 1;
     let limit = 3;
     let offset = (currentPage - 1) * limit;
-    
+
     let params = {};
     if(req.query.cid && req.query._id){
       params._id = objectId(req.query._id);
     }
 
     if(req.query.cstring && req.query.string){
+      // Query Mongodb:
       // db.data.find({"stringdata": {$regex: "ac", $options: "$i"}});
       // db.data.find({"stringdata": /Achmad angri/i});
       params.stringdata = {$regex: req.query.string, $options: "$i"}
@@ -33,7 +34,9 @@ module.exports = function(data){
     }
 
     if(req.query.cdate && req.query.sdate && req.query.edate ){
+      // Query Mongodb :
       // db.data.find({$and : [{datedata: {$gt: "2018-03-13"}}, {datedata: {$lt: "2018-09-17"}}]});
+      // db.data.find({datedata: {$gt: "2018-03-13"}}, {datedata: {$lt: "2018-09-17"}}});
       params.datedata = { $gte: req.query.sdate, $lte: req.query.edate }
     }
 
@@ -43,10 +46,10 @@ module.exports = function(data){
     }
 
     data.find(params).count(function(err, total){
-      //console.log(params);
+      console.log(params);
       let pages = Math.ceil(total / limit);
       data.find(params).limit(limit).skip(offset).toArray(function(err, docs){
-        console.log(params);
+        // console.log(params);
         // console.log(docs);
         res.render('list', {rows: docs, pagination: {total, pages, currentPage, limit, offset, url: url}, query: req.query, moment: moment});
       })
