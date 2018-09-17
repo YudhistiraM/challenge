@@ -10,7 +10,7 @@ module.exports = function(data){
     let currentPage = req.query.page || 1;
     let limit = 3;
     let offset = (currentPage - 1) * limit;
-
+    
     let params = {};
     if(req.query.cid && req.query._id){
       params._id = objectId(req.query._id);
@@ -64,17 +64,11 @@ module.exports = function(data){
     let float = req.body.float;
     let date = req.body.date;
     let boolean = req.body.boolean;
-    var MongoClient = require('mongodb').MongoClient;
-    var url = "mongodb://localhost:27017/";
 
-    MongoClient.connect(url, function(err, db) {
+    var myobj = {stringdata: `${string}`, integerdata: `${integer}`, floatdata: `${float}`, datedata: `${date}`, booleandata: `${boolean}`};
+    data.insertOne(myobj, function(err, res) {
       if (err) throw err;
-      var dbo = db.db("cruddb");
-      var myobj = {stringdata: `${string}`, integerdata: `${integer}`, floatdata: `${float}`, datedata: `${date}`, booleandata: `${boolean}`};
-      dbo.collection("data").insertOne(myobj, function(err, res) {
-        if (err) throw err;
-        // console.log(res);
-      });
+      // console.log(res);
     });
     res.redirect('/');
   });
@@ -83,18 +77,10 @@ module.exports = function(data){
   router.get('/delete/:_id', function(req, res) {
     let B_id = req.params._id;
 
-    var MongoClient = require('mongodb').MongoClient;
-    var url = "mongodb://localhost:27017/";
-
-    MongoClient.connect(url, function(err, db) {
+    data.deleteOne({"_id": objectId(B_id)}, function(err, obj) {
       if (err) throw err;
-      var dbo = db.db("cruddb");
-      // var myquery = {"_id": objectId(B_id)};
-      dbo.collection("data").deleteOne({"_id": objectId(B_id)}, function(err, obj) {
-        if (err) throw err;
-        // console.log(myquery);
-        res.redirect('/');
-      });
+      // console.log(myquery);
+      res.redirect('/');
     });
   });
 
@@ -119,19 +105,11 @@ module.exports = function(data){
       booleandata : req.body.boolean
     };
 
-    var MongoClient = require('mongodb').MongoClient;
-    var url = "mongodb://127.0.0.1:27017/";
-
-    MongoClient.connect(url, function(err, db) {
+    var myquery = {"_id": objectId(B_id)};
+    var newvalues = { $set: item };
+    data.updateOne(myquery, newvalues, function(err, res) {
       if (err) throw err;
-      var dbo = db.db("cruddb");
-      var myquery = {"_id": objectId(B_id)};
-      var newvalues = { $set: item };
-      dbo.collection("data").updateOne(myquery, newvalues, function(err, res) {
-        if (err) throw err;
-      });
     });
-
 
     res.redirect('/');
   });
