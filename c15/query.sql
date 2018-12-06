@@ -48,7 +48,7 @@ GROUP BY Nama_Dosen;
 -SELECT * FROM Mahasiswa ORDER BY Usia_Mhs DESC;
 -SELECT * FROM Mahasiswa ORDER BY Usia_Mhs ASC;
 
-// Menampilkan Matakulai yang di ulang C dan D Dengan Detail lengkap Table Mahasiswa, Dosen dan Mata_Kuliah
+// Menampilkan Matakuliah yang di ulang C dan D Dengan Detail lengkap Table Mahasiswa, Dosen dan Mata_Kuliah
 
 SELECT Nama_MataKuliah, Nama_Mhs, Nama_Jur, Nama_Dosen, Pencapaian
 FROM ((((Mahasiswa

@@ -20,7 +20,7 @@ module.exports = function(pool){
       searchingMode = true;
     }
     if(req.query.cstring && req.query.string){
-      params.push(`stringdata like '%${req.query.string}%'`)
+      params.push(`stringdata Ilike '%${req.query.string}%'`)
       searchingMode = true;
     }
     if(req.query.cinteger && req.query.integer){
